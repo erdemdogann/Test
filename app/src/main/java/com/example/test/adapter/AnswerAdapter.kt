@@ -6,8 +6,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.test.data.Data
 import com.example.test.databinding.AnswerBinding
 
-class AnswerAdapter(private var data: List<Data>) :
+class AnswerAdapter(
+    private var data: List<Data>,
+    private val onClick: (url: String) -> Unit
+) :
     RecyclerView.Adapter<AnswerAdapter.ViewHolder>() {
+
+    var lastCheckedPosition = -1
 
     var answerList = listOf(
         "Souls",
@@ -20,15 +25,28 @@ class AnswerAdapter(private var data: List<Data>) :
         "Sports",
         "Survival"
     )
+    var model: List<Data> = arrayListOf()
 
-    inner class ViewHolder(private val binding: AnswerBinding) :
+    abstract inner class ViewHolder(private val binding: AnswerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(data: Data) {
-            binding.textView.text = data.text
 
+        fun bind(model: Data, itemIdentifier: String) {
+            binding.textView.tag = itemIdentifier
+            binding.textView.setOnClickListener {
+                if (lastCheckedPosition == -1) {
+                    lastCheckedPosition = holder.adapterPosition
+                    model.isSelected = true
+                    notifyDataSetChanged()
+                } else {
+                    model.isSelected = false
+                    lastCheckedPosition = holder.adapterPosition
+                    notifyDataSetChanged()
+                }
+            }
         }
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnswerAdapter.ViewHolder {
 
@@ -42,7 +60,8 @@ class AnswerAdapter(private var data: List<Data>) :
     }
 
     override fun onBindViewHolder(holder: AnswerAdapter.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val data = model[position]
+        holder.bind(data,data.text)
     }
 
     override fun getItemCount(): Int {
