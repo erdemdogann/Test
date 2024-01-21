@@ -7,3 +7,13 @@ _
 /app/src/main/java/com/example/test/data/Data.kt,7\4\7482ddfca557d49fd2dc97852f552f8003d6c48a
 b
 2app/src/main/java/com/example/test/MainActivity.kt,e\b\eb3318d0b12bb0d9ea18d018399fff512d270858
+c
+3app/src/main/java/com/example/test/fragment/test.kt,3\c\3cdb06118c30b6e5c5d089b8a7a4831af417f647
+k
+;app/src/main/java/com/example/test/fragment/FragmentTest.kt,4\1\419c1b87f4ed36ded0d34c8166d5b892872c5ab2
+k
+;app/src/main/java/com/example/test/fragment/TestFragment.kt,0\5\05d133f879fc2a477bfac1f36cf74377a6ccd3ea
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0

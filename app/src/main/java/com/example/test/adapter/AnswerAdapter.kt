@@ -27,20 +27,20 @@ class AnswerAdapter(
     )
     var model: List<Data> = arrayListOf()
 
-    abstract inner class ViewHolder(private val binding: AnswerBinding) :
+     inner class ViewHolder(private val binding: AnswerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
 
-        fun bind(model: Data, itemIdentifier: String) {
+        fun bind(model: Data, itemIdentifier: String,position: Int) {
             binding.textView.tag = itemIdentifier
             binding.textView.setOnClickListener {
                 if (lastCheckedPosition == -1) {
-                    lastCheckedPosition = holder.adapterPosition
+                    lastCheckedPosition = adapterPosition
                     model.isSelected = true
                     notifyDataSetChanged()
                 } else {
                     model.isSelected = false
-                    lastCheckedPosition = holder.adapterPosition
+                    lastCheckedPosition = adapterPosition
                     notifyDataSetChanged()
                 }
             }
@@ -61,7 +61,7 @@ class AnswerAdapter(
 
     override fun onBindViewHolder(holder: AnswerAdapter.ViewHolder, position: Int) {
         val data = model[position]
-        holder.bind(data,data.text)
+        holder.bind(data,data.text,position)
     }
 
     override fun getItemCount(): Int {
