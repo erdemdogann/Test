@@ -23,7 +23,7 @@ class AnswerAdapter(
 
         fun bind(model: Data) {
             binding.textView.text = model.text
-            binding.imageView.visibility = View.GONE
+            binding.imageView.visibility = View.INVISIBLE
 
             binding.textView.setOnClickListener {
                 binding.imageView.visibility = View.VISIBLE

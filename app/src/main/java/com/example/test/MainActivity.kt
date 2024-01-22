@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                 Data("Adventure", false)
             )
         adapter = AnswerAdapter(answerList)
-
+        binding.recyclerView.adapter = adapter
     }
 
 
