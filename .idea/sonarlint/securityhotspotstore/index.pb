@@ -11,5 +11,3 @@ b
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-Å
-Q.idea/sonarlint/securityhotspotstore/0/5/05d133f879fc2a477bfac1f36cf74377a6ccd3ea,7\2\724425b58f414e177a69166da7a49f7def05e536
