@@ -20,13 +20,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val answerList =
             mutableListOf(
-                Data("Souls", false),
+                Data("Souls-like", false),
                 Data("MMORPG", false),
-                Data("JRPG", false),
+                Data("MOBA", false),
                 Data("Horror", false),
                 Data("Shooter", false),
                 Data("Adventure", false)
             )
+        binding.questionText.text = "What is your favorite game genre?"
+
         adapter = AnswerAdapter(answerList)
         binding.recyclerView.adapter = adapter
     }
